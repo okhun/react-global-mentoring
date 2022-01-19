@@ -1,0 +1,29 @@
+.searchform_container {
+  display: "flex";
+  justify-content: "center";
+}
+
+.searchform_container > form {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+.searchform_container > form > input {
+  background: #323232;
+  outline: none;
+  border: none;
+  width: 70%;
+  height: 30px;
+  border-radius: 3px;
+  color: #ffffff;
+  padding-left: 10px;
+}
+.searchform_container > form > button {
+  background-color: #f65261;
+  height: 30px;
+  border-radius: 2px;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  width: 25%;
+}

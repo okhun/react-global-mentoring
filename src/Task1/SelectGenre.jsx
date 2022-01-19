@@ -1,24 +1,32 @@
 import React, { useState } from "react";
 import "./selectGenre.css";
+import checkmark from "./../images/checkmark.svg";
 const SelectGenre = () => {
   const [show, setShow] = useState("");
-  const [clip, setClippath] = useState("polygon(50% 75%, 0 25%, 100% 25%)");
+  const [isopen, setOpen] = useState(false);
+  const genre = ["Crime", "Documentary", "Horror", "Comedy"];
+  const [isChecked, setCheckmarks] = useState([false, false, false, false]);
+  const setCheck = (i) => {
+    setCheckmarks((prev) => {
+      let temp = [...prev];
+      temp[i] = !temp[i];
+      return temp;
+    });
+  };
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div
-        id="list1"
         className={"dropdown-check-list " + show}
-        tabindex="100"
         style={{ width: "400px", backgroundColor: "#232323", color: "#FFFFFF" }}
       >
         <span
           onClick={() => {
             if (show === "visible") {
               setShow("");
-              setClippath("polygon(50% 75%, 0 25%, 100% 25%)");
+              setOpen(false);
             } else {
               setShow("visible");
-              setClippath("polygon(50% 25%, 0 75%, 100% 75%)");
+              setOpen(true);
             }
           }}
           className="anchor"
@@ -29,40 +37,44 @@ const SelectGenre = () => {
           }}
         >
           Select Genre
-          <span style={{ clipPath: clip }} className="arrow">
-            ok
-          </span>
+          <span className={`arrow ${isopen ? "opened" : "notopen"}`}>ok</span>
         </span>
 
         <ul className="items" style={{ marginTop: "20px" }}>
-          <li>
-            <label className="container">
-              Crime
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </li>
-          <li>
-            <label className="container">
-              Documentary
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </li>
-          <li>
-            <label className="container">
-              Horror
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </li>
-          <li>
-            <label className="container">
-              Comedy
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </li>
+          {genre.map((el, i) => {
+            return (
+              <li key={el}>
+                <label className="container">
+                  {!isChecked[i] ? (
+                    <button
+                      onClick={() => {
+                        setCheck(i);
+                      }}
+                      className="btnoptions"
+                    ></button>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        setCheck(i);
+                      }}
+                      className="checkmark"
+                    >
+                      <img
+                        onClick={() => {
+                          setCheck(i);
+                        }}
+                        className="checkmark_img"
+                        src={checkmark}
+                        alt="checkmark"
+                      />
+                    </button>
+                  )}
+
+                  {el}
+                </label>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

@@ -3,12 +3,11 @@ const FunctionComponentCounter = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
+    
       <div>
         <button
           onClick={() => {
-            let temp = count + 1;
-            setCount(temp);
+            setCount((prevCount) => prevCount + 1);
           }}
         >
           Increment
@@ -16,14 +15,13 @@ const FunctionComponentCounter = () => {
         <p>{count}</p>
         <button
           onClick={() => {
-            let temp = count - 1;
-            setCount(temp);
+            setCount((prevCount) => prevCount - 1);
           }}
         >
           Decrement
         </button>
       </div>
-    </div>
+    
   );
 };
 

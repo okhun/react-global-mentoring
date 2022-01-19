@@ -4,12 +4,14 @@ import PureComponent from "./Task1/PureComponent";
 import FunctionComponentCounter from "./Task1/FunctionComponentAndCounter";
 import SearchForm from "./Task1/SearchForm";
 import SelectGenre from "./Task1/SelectGenre";
-import reactCreateElement from "./Task1/React.CreateElement";
+import CreateElement from "./Task1/React.CreateElement";
+import MainContainer from "./Task3/MainContainer";
 function App() {
   return (
-    <div className="App">
+    <div>
+      {/* <MainContainer /> */}
       Hello world
-      {reactCreateElement}
+      <CreateElement />
       <ReactComponent />
       <PureComponent />
       <FunctionComponentCounter />
