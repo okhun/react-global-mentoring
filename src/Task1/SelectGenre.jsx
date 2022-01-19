@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./selectGenre.css";
 import checkmark from "./../images/checkmark.svg";
 const SelectGenre = () => {
-  const [show, setShow] = useState("");
   const [isopen, setOpen] = useState(false);
   const genre = ["Crime", "Documentary", "Horror", "Comedy"];
   const [isChecked, setCheckmarks] = useState([false, false, false, false]);
@@ -16,16 +15,14 @@ const SelectGenre = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div
-        className={"dropdown-check-list " + show}
+        className={`dropdown-check-list ${isopen ? "visible" : ""}`}
         style={{ width: "400px", backgroundColor: "#232323", color: "#FFFFFF" }}
       >
         <span
           onClick={() => {
-            if (show === "visible") {
-              setShow("");
+            if (isopen) {
               setOpen(false);
             } else {
-              setShow("visible");
               setOpen(true);
             }
           }}
