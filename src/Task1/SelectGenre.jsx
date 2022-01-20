@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./selectGenre.css";
 import checkmark from "./../images/checkmark.svg";
+
 const SelectGenre = () => {
-  const [isopen, setOpen] = useState(false);
-  const genre = ["Crime", "Documentary", "Horror", "Comedy"];
+  const [isOpen, setOpen] = useState(false);
+  const genres = ["Crime", "Documentary", "Horror", "Comedy"];
   const [isChecked, setCheckmarks] = useState([false, false, false, false]);
   const setCheck = (i) => {
     setCheckmarks((prev) => {
@@ -15,16 +16,13 @@ const SelectGenre = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div
-        className={`dropdown-check-list ${isopen ? "visible" : ""}`}
+        className={`dropdown-check-list ${isOpen ? "visible" : ""}`}
         style={{ width: "400px", backgroundColor: "#232323", color: "#FFFFFF" }}
       >
         <span
           onClick={() => {
-            if (isopen) {
-              setOpen(false);
-            } else {
-              setOpen(true);
-            }
+            const newIsOpen = !isOpen;
+            setOpen(newIsOpen);
           }}
           className="anchor"
           style={{
@@ -34,13 +32,12 @@ const SelectGenre = () => {
           }}
         >
           Select Genre
-          <span className={`arrow ${isopen ? "opened" : "notopen"}`}>ok</span>
+          <span className={`arrow ${isOpen ? "open" : "closed"}`}>ok</span>
         </span>
-
         <ul className="items" style={{ marginTop: "20px" }}>
-          {genre.map((el, i) => {
+          {genres.map((genre, i) => {
             return (
-              <li key={el}>
+              <li key={genre}>
                 <label className="container">
                   {!isChecked[i] ? (
                     <button
@@ -66,8 +63,7 @@ const SelectGenre = () => {
                       />
                     </button>
                   )}
-
-                  {el}
+                  {genre}
                 </label>
               </li>
             );

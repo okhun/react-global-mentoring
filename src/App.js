@@ -5,11 +5,9 @@ import FunctionComponentCounter from "./Task1/FunctionComponentAndCounter";
 import SearchForm from "./Task1/SearchForm";
 import SelectGenre from "./Task1/SelectGenre";
 import CreateElement from "./Task1/React.CreateElement";
-import MainContainer from "./Task3/MainContainer";
 function App() {
   return (
     <div>
-      {/* <MainContainer /> */}
       Hello world
       <CreateElement />
       <ReactComponent />

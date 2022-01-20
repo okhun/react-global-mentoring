@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./searchForm.css";
+
 const SearchForm = () => {
   const [term, setTerm] = useState("");
   return (
-    <div className="searchform_container">
+    <div className="searchform-container">
       <form>
         <input
           onChange={(e) => {

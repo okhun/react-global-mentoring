@@ -1,14 +1,14 @@
-.searchform_container {
+.searchform-container {
   display: "flex";
   justify-content: "center";
 }
 
-.searchform_container > form {
+.searchform-container > form {
   width: 50%;
   display: flex;
   justify-content: space-around;
 }
-.searchform_container > form > input {
+.searchform-container > form > input {
   background: #323232;
   outline: none;
   border: none;
@@ -18,7 +18,7 @@
   color: #ffffff;
   padding-left: 10px;
 }
-.searchform_container > form > button {
+.searchform-container > form > button {
   background-color: #f65261;
   height: 30px;
   border-radius: 2px;
