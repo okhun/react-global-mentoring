@@ -3,8 +3,7 @@ const HTmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (env) => {
   return {
-    mode: env.WEBPACK_SERVE ? "development" : "production",
-
+    mode: env.production ? "production" : "development",
     entry: "./src/index.js",
     output: {
       filename: "bundle.js",
@@ -15,7 +14,15 @@ module.exports = (env) => {
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
-          use: "babel-loader",
+          use: ["babel-loader"],
+        },
+        {
+          test: /\.(css|sass)$/i,
+          use: ["style-loader", "css-loader", "sass-loader"],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: "asset/resource",
         },
       ],
     },
@@ -24,5 +31,9 @@ module.exports = (env) => {
         template: "./public/index.html",
       }),
     ],
+    devServer: {
+      hot: true,
+      open: true,
+    },
   };
 };
