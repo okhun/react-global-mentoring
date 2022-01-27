@@ -1,5 +1,7 @@
 const path = require("path");
 const HTmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = (env) => {
   return {
@@ -17,12 +19,25 @@ module.exports = (env) => {
           use: ["babel-loader"],
         },
         {
-          test: /\.(css|sass)$/i,
-          use: ["style-loader", "css-loader", "sass-loader"],
+          test: /\.css$/i,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          test: /\.sass$/i,
+          use: ["sass-loader"],
+        },
+        {
+          test: /\.(png|jpg|jpeg|gif)$/i,
           type: "asset/resource",
+        },
+        {
+          test: /\.svg$/i,
+          use: ["@svgr/webpack"],
+        },
+        {
+          test: /\.js$/,
+          enforce: "pre",
+          use: ["source-map-loader"],
         },
       ],
     },
@@ -30,7 +45,24 @@ module.exports = (env) => {
       new HTmlWebpackPlugin({
         template: "./public/index.html",
       }),
+      new MiniCssExtractPlugin(),
     ],
+    optimization: {
+      minimizer: [
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.squooshMinify,
+            options: {
+              encodeOptions: {
+                mozjpeg: {
+                  quality: 90,
+                },
+              },
+            },
+          },
+        }),
+      ],
+    },
     devServer: {
       hot: true,
       open: true,
