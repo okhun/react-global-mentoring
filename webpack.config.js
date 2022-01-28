@@ -20,11 +20,9 @@ module.exports = (env) => {
         },
         {
           test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, "css-loader"],
-        },
-        {
-          test: /\.sass$/i,
-          use: ["sass-loader"],
+          use: env.production
+            ? [MiniCssExtractPlugin.loader, "css-loader"]
+            : ["css-loader"],
         },
         {
           test: /\.(png|jpg|jpeg|gif)$/i,
@@ -33,11 +31,6 @@ module.exports = (env) => {
         {
           test: /\.svg$/i,
           use: ["@svgr/webpack"],
-        },
-        {
-          test: /\.js$/,
-          enforce: "pre",
-          use: ["source-map-loader"],
         },
       ],
     },
@@ -67,5 +60,6 @@ module.exports = (env) => {
       hot: true,
       open: true,
     },
+    devtool: "source-map",
   };
 };
