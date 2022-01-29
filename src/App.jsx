@@ -1,6 +1,13 @@
 import React from "react";
+import MainContainer from "./MainComponents/MainContainer.jsx";
+import "./App.css";
+
 const App = () => {
-  return <div>It is React Component okay</div>;
+  return (
+    <div>
+      <MainContainer />
+    </div>
+  );
 };
 
 export default App;

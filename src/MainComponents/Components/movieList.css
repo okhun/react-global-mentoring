@@ -1,0 +1,41 @@
+.movielist-container {
+  background-color: #232323;
+}
+.movielist-container > p {
+  color: #ffffff;
+  padding: 30px;
+}
+.movielist-container > div {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+.movie-card {
+  position: relative;
+}
+.movie-card > img {
+  position: absolute;
+  right: 10%;
+}
+.movie-card > div {
+  width: 80%;
+  height: 400px;
+  margin: auto;
+}
+.movie-card > div > img {
+  width: 100%;
+  height: 80%;
+}
+.movie-card > div > div {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  margin-top: 10px;
+}
+.p-release {
+  border: 1px solid #fff;
+  padding: 2px;
+  border-radius: 3px;
+}
+.p-overview {
+  color: #fff;
+}

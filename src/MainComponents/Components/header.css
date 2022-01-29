@@ -1,0 +1,36 @@
+.header_container {
+  background-image: url("./../../images/headerbackground.png");
+  background-repeat: no-repeat;
+  height: 400px;
+  background-color: black;
+  background-size: cover;
+  position: relative;
+  top: 0;
+}
+.header_container > div {
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 20px;
+}
+.header_logo_movie {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+.add-movie {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 2px;
+  background-color: #606060ad;
+}
+.header-h2 {
+  position: absolute;
+  left: 25%;
+  top: 30%;
+  color: #ffffff;
+}
+.set-searchform {
+  position: relative;
+  top: 30%;
+}
