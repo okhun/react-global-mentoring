@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "title": "Harry Potter",
+    "movieUrl": "http://localhost:3000/",
+    "genre": "comedy",
+    "releaseDate": "2020-10-2",
+    "rating": 4.5,
+    "runtime": "minutes",
+    "overview": "Something about movie",
+    "image": 1
+  },
+  {
+    "id": 2,
+    "title": "Harry Potter",
+    "movieUrl": "http://localhost:3000/",
+    "genre": "comedy",
+    "releaseDate": "2020-10-2",
+    "rating": 4.5,
+    "runtime": "minutes",
+    "overview": "Something about movie",
+    "image": 2
+  },
+  {
+    "id": 3,
+    "title": "Harry Potter",
+    "movieUrl": "http://localhost:3000/",
+    "genre": "horror",
+    "releaseDate": "2020-10-2",
+    "rating": 4.5,
+    "runtime": "minutes",
+    "overview": "Something about movie",
+    "image": 3
+  },
+  {
+    "id": 4,
+    "title": "Harry Potter",
+    "movieUrl": "http://localhost:3000/",
+    "genre": "comedy",
+    "releaseDate": "2020-10-2",
+    "rating": 4.5,
+    "runtime": "minutes",
+    "overview": "Something about movie",
+    "image": 4
+  },
+  {
+    "id": 5,
+    "title": "Harry Potter",
+    "movieUrl": "http://localhost:3000/",
+    "genre": "comedy",
+    "releaseDate": "2020-10-2",
+    "rating": 4.5,
+    "runtime": "minutes",
+    "overview": "Something about movie",
+    "image": 5
+  },
+  {
+    "id": 6,
+    "title": "Harry Potter",
+    "movieUrl": "http://localhost:3000/",
+    "genre": "comedy",
+    "releaseDate": "2020-10-2",
+    "rating": 4.5,
+    "runtime": "minutes",
+    "overview": "Something about movie",
+    "image": 6
+  },
+  {
+    "id": 7,
+    "title": "Harry Potter",
+    "movieUrl": "http://localhost:3000/",
+    "genre": "comedy",
+    "releaseDate": "2020-10-2",
+    "rating": 4.5,
+    "runtime": "minutes",
+    "overview": "Something about movie",
+    "image": 7
+  }
+]
